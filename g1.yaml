@@ -1,0 +1,60 @@
+# 
+xml_path: "{LEGGED_GYM_ROOT_DIR}/resources/robots/g1_description/scene.xml"
+
+# Total simulation time
+simulation_duration: 60.0
+# Simulation time step
+simulation_dt: 0.0025
+# Controller update frequency (simulation_dt * control_decimation = 0.0025; 400Hz)
+control_decimation: 1
+
+# -------------------------------------------------------------------------
+# 23 Active DoF Configuration
+# Filtered from the 29-motor array in the deployment script
+# -------------------------------------------------------------------------
+
+# Order:
+# 1. Left Leg (6): Hip Y/R/P, Knee, Ankle P/R
+# 2. Right Leg (6): Hip Y/R/P, Knee, Ankle P/R
+# 3. Waist (1): Yaw only
+# 4. Left Arm (5): Shoulder P/R/Y, Elbow, Wrist Roll
+# 5. Right Arm (5): Shoulder P/R/Y, Elbow, Wrist Roll
+
+kps: [
+    # Left Leg
+    100, 100, 100, 150, 40, 40, 
+    # Right Leg
+    100, 100, 100, 150, 40, 40,
+    # Waist (Yaw)
+    200,
+    # Left Arm
+    40, 40, 40, 40, 40,
+    # Right Arm
+    40, 40, 40, 40, 40
+]
+
+kds: [
+    # Left Leg
+    2, 2, 2, 4, 2, 2, 
+    # Right Leg
+    2, 2, 2, 4, 2, 2,
+    # Waist (Yaw)
+    5,
+    # Left Arm
+    4, 4, 4, 4, 4,
+    # Right Arm
+    4, 4, 4, 4, 4
+]
+
+default_angles: [
+    # Left Leg
+    -0.1,  0.0,  0.0,  0.3, -0.2, 0.0, 
+    # Right Leg
+    -0.1,  0.0,  0.0,  0.3, -0.2, 0.0,
+    # Waist (Yaw)
+    0.0,
+    # Left Arm (Shoulder P/R/Y, Elbow, Wrist Roll)
+    0.0, 0.25, 0.0, 0.97, 0.15,
+    # Right Arm (Shoulder P/R/Y, Elbow, Wrist Roll)
+    0.0, -0.25, 0.0, 0.97, -0.15
+]

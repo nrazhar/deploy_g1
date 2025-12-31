@@ -1,0 +1,6 @@
+# GUI Dependencies for MuJoCo Robot Controller
+PyQt5>=5.15.0
+pyqtgraph>=0.13.0
+numpy>=1.20.0
+mujoco
+
